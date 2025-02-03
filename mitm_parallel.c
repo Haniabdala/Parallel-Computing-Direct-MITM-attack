@@ -169,28 +169,6 @@ void dict_insert(u64 key, u64 value, struct entry *A)
  *  The function returns -1 if there are more than `maxval` results.
  */
 
-// int dict_probe(u64 key, int maxval, u64 values[],struct entry A)
-// {
-//     u32 k = key % PRIME;
-//     u64 h = murmur64(key) % dict_size;
-//     int nval = 0;
-//     for (;;)
-//     {
-//         if (A[h].k == EMPTY)
-//             return nval;
-//         if (A[h].k == k)
-//         {
-//             if (nval == maxval)
-//                 return -1;
-//             values[nval] = A[h].v;
-//             nval += 1;
-//         }
-//         h += 1;
-//         if (h == dict_size)
-//             h = 0;
-//     }
-// }
-
 /***************************** MITM problem ***********************************/
 
 /* f : {0, 1}^n --> {0, 1}^n.  Speck64-128 encryption of P[0], using k */
