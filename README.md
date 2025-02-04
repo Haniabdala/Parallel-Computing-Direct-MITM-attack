@@ -1,4 +1,4 @@
-Direct Man-In-The-Middle Attack - Parrallel computing
+#Direct Man-In-The-Middle Attack - Parrallel computing
 
 We provide you with a sequential C program that solves the following problem. Given two
 functions f, g : {0, 1}
@@ -33,7 +33,7 @@ a (distributed) datastructure problem.
 
 
 
-1 Approach
+##1 Approach
 Our approach takes a structured strategy by breaking the problem into 4 major components:
   1. Dictionary distribution.
   2. Key and value generation.
@@ -44,7 +44,7 @@ By separating these components, we can independently execute each stage across m
 increase scalability and reduces computation time.
 
 
-2 Implementation
+##2 Implementation
 
 2.1 Dictionary Setup
 In this section, individual cores perform their part of generating the dictionary jointly. This way,
@@ -54,12 +54,12 @@ Instead of assigning the entire dictionary of size N to a single core, we divide
 evenly across all the available cores. With work being equally divided, processes can be faster and
 more efficient without any dependencies, as follows:
 
-  2.1.1 Distributed Initialization via OpenMP
-  The contribution on OpenMP into the dictionary initialization, since this process is done separately on
-  each core, then we can benefit from threading the initialization for loop using OpenMP, thus we can
-  reduce the time needed to initialize the local dictionary on each core, leading to faster overall setup.
+###2.1.1 Distributed Initialization via OpenMP
+The contribution on OpenMP into the dictionary initialization, since this process is done separately on
+each core, then we can benefit from threading the initialization for loop using OpenMP, thus we can
+reduce the time needed to initialize the local dictionary on each core, leading to faster overall setup.
 
-2.2 Key and value generation
+###2.2 Key and value generation
 Each core will then use the fill function which has been customized to allow more granular control over
 the dictionary setup and to increase parallelization potential.
 This function includes the ”dict setup” that initialize the dictionary, ”Keys generation using f(x)
