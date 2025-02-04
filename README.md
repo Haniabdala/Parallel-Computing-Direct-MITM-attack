@@ -73,4 +73,57 @@ network is highly recommended.
 
 
 
+# Golden Collision Search: Meet-in-the-Middle Attack
+
+## Problem Overview
+
+In this project, we are tackling a cryptographic problem where the goal is to find a **"golden collision"** `(x, y)` such that:
+
+- \( f(x) = g(y) \)
+- \( \pi(x, y) = 1 \)
+
+Where:
+- `f`, `g` are functions that map binary strings of length `n` to binary strings of length `n`.
+- `π` is a predicate that checks if the pair `(x, y)` satisfies a condition.
+
+We aim to solve this problem efficiently using an algorithm known as the **Meet-in-the-Middle Attack**. This algorithm allows us to find the golden collision without resorting to brute-force methods. It performs significantly fewer operations than a naive brute-force approach, making it much more feasible for larger values of `n`.
+
+---
+
+## What We Are Trying to Solve
+
+Given two functions \( f \), \( g \) and a predicate \( \pi \), our goal is to find a **pair** `(x, y)` where:
+
+1. **Function Match**: \( f(x) = g(y) \)
+2. **Predicate Condition**: \( \pi(x, y) = 1 \)
+
+This is not just a theoretical problem—it's something that can be applied in fields like **cryptanalysis**, where efficient search techniques are essential.
+
+### Why is this Problem Important?
+
+The brute-force approach to solve this would require testing **all pairs** `(x, y)` in the search space, which grows exponentially as `n` increases. This results in \( 2^{2n} \) possible pairs, which is infeasible for large `n` (e.g., \( n \geq 40 \)).
+
+The **Meet-in-the-Middle Attack** solves the problem much more efficiently by reducing the number of operations to \( 3 \times 2^n \) on average, using only \( 2^n \) words of memory. This is a significant improvement over brute-force methods, and it makes solving this problem much more practical for larger values of `n`.
+
+---
+
+## How the Meet-in-the-Middle Attack Works
+
+The Meet-in-the-Middle algorithm works by splitting the problem into two parts:
+
+1. **Step 1**: We create a **dictionary** \( D \) where for each \( x \in \{0, 1\}^n \), we store the pair \( f(x) \to x \).
+2. **Step 2**: For each \( y \in \{0, 1\}^n \), we check if there exists any `x` such that \( g(y) = f(x) \) (i.e., check if \( g(y) \) exists in the dictionary \( D \)).
+3. **Step 3**: For each matching pair, we check if the predicate \( \pi(x, y) = 1 \). If true, we return the pair `(x, y)` as the **golden collision**.
+
+This algorithm is **efficient** and significantly reduces the complexity of the search, especially for larger values of `n`.
+
+---
+
+## Problem Instance and Web Service
+
+To help with solving this problem, we provide an online web service that generates instances of this problem. The URL format for the service is:
+
+
+
+
 
