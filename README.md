@@ -13,7 +13,7 @@ Where:
 
 We aim to solve this problem efficiently using an algorithm known as the **Meet-in-the-Middle Attack**. This algorithm allows us to find the golden collision without resorting to brute-force methods. It performs significantly fewer operations than a naive brute-force approach, making it much more feasible for larger values of `n`.
 
----
+
 
 ## What We Are Trying to Solve
 
@@ -30,7 +30,7 @@ The brute-force approach to solve this would require testing **all pairs** `(x, 
 
 The **Meet-in-the-Middle Attack** solves the problem much more efficiently by reducing the number of operations to \( 3 \times 2^n \) on average, using only \( 2^n \) words of memory. This is a significant improvement over brute-force methods, and it makes solving this problem much more practical for larger values of `n`.
 
----
+
 
 ## How the Meet-in-the-Middle Attack Works
 
@@ -42,7 +42,6 @@ The Meet-in-the-Middle algorithm works by splitting the problem into two parts:
 
 This algorithm is **efficient** and significantly reduces the complexity of the search, especially for larger values of `n`.
 
----
 
 ## 1 Approach
 Our approach takes a structured strategy by breaking the problem into 4 major components:
