@@ -43,7 +43,7 @@ The Meet-in-the-Middle algorithm works by splitting the problem into two parts:
 This algorithm is **efficient** and significantly reduces the complexity of the search, especially for larger values of `n`.
 
 
-## 1 Approach
+## 1 - Approach
 Our approach takes a structured strategy by breaking the problem into 4 major components:
   1. Dictionary distribution.
   2. Key and value generation.
@@ -54,7 +54,7 @@ By separating these components, we can independently execute each stage across m
 increase scalability and reduces computation time.
 
 
-## 2 Implementation
+## 2 - Implementation
 
 ### 2.1 Dictionary Setup
 In this section, individual cores perform their part of generating the dictionary jointly. This way,
