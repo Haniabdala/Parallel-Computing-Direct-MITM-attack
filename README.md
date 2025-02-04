@@ -1,4 +1,4 @@
-#Direct Man-In-The-Middle Attack - Parrallel computing
+# Direct Man-In-The-Middle Attack - Parrallel computing
 
 We provide you with a sequential C program that solves the following problem. Given two
 functions f, g : {0, 1}
