@@ -1,37 +1,6 @@
 # Direct Man-In-The-Middle Attack - Parrallel computing using MPI and OPENMP
 
-We provide you with a sequential C program that solves the following problem. Given two
-functions f, g : {0, 1}
-n → {0, 1}
-n and a predicate π : {0, 1}
-n × {0, 1}
-n → {0, 1}, find a “golden
-collision” (x, y) such that f(x) = g(y) and π(x, y) = 1.
-This can be done by brute force: testing all the 2
-2n pairs (x, y). But there is also a relatively
-simple algorithm that does (in average) 3 · 2
-n “operations” and that uses 2
-n “words” of memory
-(this assumes that the functions f and g are “somewhat random”, or at least without observable
-structure). This is much better than naive brute-force. It works as follows:
-1: Initialize a dictionary D
-2: for each x ∈ {0, 1}
-n do
-3: Add the key-value pair f(x) 7→ x to the dictionary D.
-4: for each y ∈ {0, 1}
-n do
-5: L ← {x : (g(y) 7→ x) ∈ D} ▷ Retrieve all values associated with the key g(y)
-6: for each x ∈ L do
-7: if π(x, y) then
-8: return (x, y)
-This procedure was invented in the context of cryptanalysis, where it has many applications,
-hence its name: the “meet-in-the-middle attack”.
-However, we stress that no knowledge of cryptology is required to do this project. Cryptographic
-techniques are used (by us) to create instances of the problem, but you can think of it purely as
-a (distributed) datastructure problem.
-
-
-
+![Alt Text](images/Algorithm.png)
 
 ## 1 Approach
 Our approach takes a structured strategy by breaking the problem into 4 major components:
